@@ -69,7 +69,7 @@ root.getChildren().add(rect);
 startingPoint = OceanMap.getShipLocation();
 ship = new Ship(startingPoint.x,startingPoint.y);
 oceanStage.setScene(scene);
-loadShipImage(root);
+displayShip(root);
 for(int i =0 ;i <11 ;i++)
 {
        
@@ -78,16 +78,16 @@ if(IsstartingPoint.x != 0 && IsstartingPoint.y != 0)
 {
 IslandlocationXcor[count] = IsstartingPoint.x ;
 IslandlocationYcor[count] = IsstartingPoint.y ;
-loadIslandsImage(root,IsstartingPoint);
+displayisland(root,IsstartingPoint);
 count++;
 }
 }
-startSailing(scene);
+shipmovement(scene);
 
 }
 
 
-public void loadShipImage(AnchorPane root)
+public void displayShip(AnchorPane root)
    {
 	
 
@@ -99,7 +99,7 @@ root.getChildren().add(shipImgView);
 
 
 }
-public void loadIslandsImage(AnchorPane root,Point IsstartPoint)
+public void displayisland(AnchorPane root,Point IsstartPoint)
 {
 
 Image IslandImage = new Image("island.jpg",50,50,true,true);
@@ -114,7 +114,7 @@ root.getChildren().add(IslandImgView);
    
 
    
-private void startSailing(Scene scene)
+private void shipmovement(Scene scene)
 {
 scene.setOnKeyPressed(new EventHandler<KeyEvent>()
 {
